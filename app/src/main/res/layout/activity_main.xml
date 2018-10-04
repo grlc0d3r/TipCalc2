@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    tools:layout_editor_absoluteY="81dp">
+
+    <TextView
+        android:id="@+id/headingView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Enter information from bill below:"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="@+id/groupInput"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/groupLabel"
+        android:layout_width="74dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:text="Number in Party:"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/groupIcon"
+        app:layout_constraintEnd_toStartOf="@+id/groupInput"
+        app:layout_constraintStart_toEndOf="@+id/groupIcon"
+        app:layout_constraintTop_toTopOf="@+id/groupIcon" />
+
+    <EditText
+        android:id="@+id/groupInput"
+        android:layout_width="wrap_content"
+        android:layout_height="44dp"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="@+id/groupLabel"
+        app:layout_constraintEnd_toEndOf="@+id/tipInput"
+        app:layout_constraintTop_toTopOf="@+id/groupLabel" />
+
+    <TextView
+        android:id="@+id/tipLabel"
+        android:layout_width="69dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:text="Tip %:"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tipIcon"
+        app:layout_constraintEnd_toStartOf="@+id/tipInput"
+        app:layout_constraintStart_toEndOf="@+id/tipIcon"
+        app:layout_constraintTop_toTopOf="@+id/tipIcon" />
+
+    <EditText
+        android:id="@+id/tipInput"
+        android:layout_width="wrap_content"
+        android:layout_height="44dp"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="@+id/tipLabel"
+        app:layout_constraintEnd_toEndOf="@+id/billTotalInput"
+        app:layout_constraintTop_toTopOf="@+id/tipLabel"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/billTotalLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:text="Bill Total"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/billTotalIcon"
+        app:layout_constraintEnd_toStartOf="@+id/billTotalInput"
+        app:layout_constraintStart_toEndOf="@+id/billTotalIcon"
+        app:layout_constraintTop_toTopOf="@+id/billTotalIcon" />
+
+    <EditText
+        android:id="@+id/billTotalInput"
+        android:layout_width="wrap_content"
+        android:layout_height="44dp"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="@+id/billTotalLabel"
+        app:layout_constraintEnd_toEndOf="@+id/tipTotalMessage"
+        app:layout_constraintTop_toTopOf="@+id/billTotalLabel" />
+
+    <Button
+        android:id="@+id/calcButton"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="276dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@color/colorPrimary"
+        android:onClick="calculate"
+        android:text="Calculate"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/tipTotalLabel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/billTotalLabel"
+        app:layout_constraintVertical_bias="0.081" />
+
+    <Button
+        android:id="@+id/resetButton"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="264dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="Reset"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tipTotalLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="28dp"
+        android:layout_marginBottom="24dp"
+        android:text="The total for the tip is:"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/totalWithTipLabel"
+        app:layout_constraintStart_toStartOf="@+id/totalWithTipLabel" />
+
+    <TextView
+        android:id="@+id/totalWithTipLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:text="The bill total including tip is: "
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/totalPerPersonLabel"
+        app:layout_constraintStart_toStartOf="@+id/totalPerPersonLabel" />
+
+    <TextView
+        android:id="@+id/totalPerPersonLabel"
+        android:layout_width="310dp"
+        android:layout_height="27dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginBottom="24dp"
+        android:text="The total owed per person is: "
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/resetButton"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tipTotalMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:text="testing"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tipTotalLabel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tipTotalLabel"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/totalWithTipMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:text="testing"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/totalWithTipLabel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/totalWithTipLabel" />
+
+    <TextView
+        android:id="@+id/totalPerPersonMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:text="testing"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/totalPerPersonLabel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/totalPerPersonLabel"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <ImageView
+        android:id="@+id/groupIcon"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="@+id/headingView"
+        app:layout_constraintTop_toBottomOf="@+id/headingView"
+        app:srcCompat="@mipmap/ic_group" />
+
+    <ImageView
+        android:id="@+id/tipIcon"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="@+id/groupIcon"
+        app:layout_constraintTop_toBottomOf="@+id/groupIcon"
+        app:srcCompat="@mipmap/ic_tip_percent" />
+
+    <ImageView
+        android:id="@+id/billTotalIcon"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="@+id/tipIcon"
+        app:layout_constraintTop_toBottomOf="@+id/tipIcon"
+        app:srcCompat="@mipmap/ic_bill_total" />
+
+</android.support.constraint.ConstraintLayout>
